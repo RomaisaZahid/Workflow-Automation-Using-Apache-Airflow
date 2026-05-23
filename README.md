@@ -33,26 +33,44 @@ extract_task → transform_task → load_task
 **What This Pipeline Does**:
 Reads student data from a CSV file.
 Converts text into proper format (capital letters where needed).
+
 Assigns grades:
+
 A = 85 or above
+
 B = 70–84
+
 C = 50–69
+
 F = below 50
+
 Adds performance labels:
+
 Excellent
+
 Good
+
 Average
+
 Poor
+
 Removes failed students from the final data.
+
 Saves processed data into the SQLite database etl.db in the students table.
 
 **2. Employee Multi-File ETL Pipeline**:
 **Data Sources**:
+
 data/hr.csv
+
 data/it.csv
+
 data/finance.csv
+
 **Workflow**:
+
 extract_task → transform_task → load_task
+
 **What This Pipeline Does**:
 Reads employee data from multiple department files.
 Adds a department column to identify where each record came from.
